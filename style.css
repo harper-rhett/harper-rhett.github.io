@@ -3,25 +3,25 @@ body {
 	color: white;
 }
 
-.nav-bar {
+.navbar {
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }
 
-.nav-bar li {
+.navbar li {
 	display: inline;
 	padding: 8px;
 	font-size: xx-large;
 	text-decoration: none;
 }
 
-.nav-bar li a, .nav-bar li a :visited {
+.navbar li a, .navbar li a :visited {
 	color: white;
 	text-decoration: none;
 }
 
-.nav-bar li a:hover {
+.navbar li a:hover {
 	color: blue;
 }
 
