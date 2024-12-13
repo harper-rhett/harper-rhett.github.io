@@ -1,4 +1,41 @@
 body {
-	background-color: #000000;
-	color: #ffffff;
+	background-color: black;
+	color: white;
+}
+
+.nav-bar {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.nav-bar li {
+	display: inline;
+	padding: 8px;
+	font-size: xx-large;
+	text-decoration: none;
+}
+
+.nav-bar li a, .nav-bar li a :visited {
+	color: white;
+	text-decoration: none;
+}
+
+.nav-bar li a:hover {
+	color: blue;
+}
+
+.content {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.banner {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	image-rendering: pixelated;
 }
