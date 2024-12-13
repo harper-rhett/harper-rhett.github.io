@@ -16,13 +16,18 @@ body {
 	text-decoration: none;
 }
 
-.navbar li a, .navbar li a :visited {
+.navbar a, .navbar a:visited {
 	color: white;
 	text-decoration: none;
 }
 
-.navbar li a:hover {
+.navbar a:hover {
 	color: blue;
+}
+
+.navbar a.active {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .content {
