@@ -7,20 +7,33 @@
 
 	<!-- Body -->
 	<body>
+		<!-- Banner -->
+		<img src="images/banner.png" alt="The website banner." class="banner">
+
 		<!-- Navigation Bar -->
-		<script id="navbar" src="navbar.js"></script>
+		<ul class="navbar">
+			<li><button onclick="replaceContent('home.html', this)" class="active">Home</button></li>
+			<li><button onclick="replaceContent('games.html', this)">Games</button></li>
+			<li><button onclick="replaceContent('art.html', this)">Art</button></li>
+		</ul>
 
 		<!-- Content -->
-		<div class="content">
-			<h1>Welcome to my website!</h1>
-			<img src="images/profile.jpg" alt="A picture of me, Harper!" width="250" class="border">
-			<p>
-				I'm Harper!
-				<br>
-				<br>
-				Game developer, simulation designer, and most recently: animator.
-				With a passion for creativity and collaboration, this website exists as a way to showcase my work and seek out like-minded individuals.
-			</p>
-		</div>
+		<div id="content" class="content"></div>
 	</body>
 </html>
+
+<script>
+	async function replaceContent(pageName, buttonClicked) {
+		const page = await fetch(pageName);
+		const pageContent = await page.text();
+		document.getElementById('content').innerHTML = pageContent;
+
+		if (buttonClicked == null) return;
+
+		document.querySelectorAll('.navbar button')
+			.forEach(button => { button.classList.remove('active') });
+		buttonClicked.classList.add('active');
+	}
+
+	replaceContent("home.html")
+</script>

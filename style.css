@@ -21,20 +21,23 @@ p {
 .navbar li {
 	display: inline;
 	padding: 8px;
-	font-size: xx-large;
 	text-decoration: none;
 }
 
-.navbar a, .navbar a:visited {
+.navbar button, .navbar button:visited {
+	background: none;
+	border: none;
+	cursor: pointer;
 	color: white;
 	text-decoration: none;
+	font-size: 40px;
 }
 
-.navbar a:hover {
+.navbar button:hover {
 	color: blue;
 }
 
-.navbar a.active {
+.navbar button.active {
     text-decoration: underline;
     font-weight: bold;
 }
