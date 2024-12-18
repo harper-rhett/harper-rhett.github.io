@@ -64,7 +64,20 @@ p {
 .pop {
 	margin: 25px;
 	padding: 25px;
-	box-shadow: 0 0 15px 5px white;
+	box-shadow: 0 0 15px 0px white;
 	border-radius: 25px;
 	border: solid;
+}
+
+.footer {
+	text-align: center;
+}
+
+.footer img {
+	width: 50px;
+	padding: 15px;
+}
+
+.footer a {
+	text-decoration: none;
 }
