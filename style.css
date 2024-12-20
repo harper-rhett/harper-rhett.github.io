@@ -63,7 +63,7 @@ p {
 
 .pop {
 	margin: 25px;
-	padding: 25px;
+	padding: 0px 0px 25px 25px;
 	box-shadow: 0 0 15px 0px white;
 	border-radius: 25px;
 	border: solid;

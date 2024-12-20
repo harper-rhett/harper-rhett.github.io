@@ -35,18 +35,48 @@
 	</body>
 </html>
 
+<!-- I cannot deny ChatGPT helped generate this -->
 <script>
-	async function replaceContent(pageName, buttonClicked) {
-		const page = await fetch(pageName);
-		const pageContent = await page.text();
-		document.getElementById('content').innerHTML = pageContent;
+    async function replaceContent(pageName, buttonClicked = null, pushState = true) {
+        const page = await fetch(pageName);
+        const pageContent = await page.text();
+        document.getElementById('content').innerHTML = pageContent;
 
-		if (buttonClicked == null) return;
+        // Update active button
+        if (buttonClicked) {
+            document.querySelectorAll('.navbar button')
+                .forEach(button => button.classList.remove('active'));
+            buttonClicked.classList.add('active');
+        } else {
+            document.querySelectorAll('.navbar button')
+                .forEach(button => {
+                    const buttonPage = button.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    if (buttonPage === pageName) {
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active');
+                    }
+                });
+        }
 
-		document.querySelectorAll('.navbar button')
-			.forEach(button => { button.classList.remove('active') });
-		buttonClicked.classList.add('active');
-	}
+        if (pushState) {
+            history.pushState({ pageName }, "", `?page=${pageName}`);
+        }
+    }
 
-	replaceContent("home.html")
+    function loadPageFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const page = params.get('page') || 'home.html';
+        replaceContent(page, null, false);
+    }
+
+    window.onpopstate = function (event) {
+        if (event.state) {
+            replaceContent(event.state.pageName, null, false);
+        } else {
+            loadPageFromUrl();
+        }
+    };
+
+    loadPageFromUrl();
 </script>
