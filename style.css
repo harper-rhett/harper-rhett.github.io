@@ -36,6 +36,7 @@ a:hover {
 
 .navbar li {
 	display: inline;
+	margin: 0px;
 	padding: 8px;
 	text-decoration: none;
 }
