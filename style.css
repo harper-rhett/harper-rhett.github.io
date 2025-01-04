@@ -37,7 +37,7 @@ a:hover {
 .navbar li {
 	display: inline;
 	margin: 0px;
-	padding: 8px;
+	padding: 12px;
 	text-decoration: none;
 }
 
@@ -48,6 +48,8 @@ a:hover {
 	color: white;
 	text-decoration: none;
 	font-size: 40px;
+	margin: 0px;
+	padding: 0px;
 }
 
 .navbar button:hover {
