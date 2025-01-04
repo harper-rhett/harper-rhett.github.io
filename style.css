@@ -21,7 +21,7 @@ a {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	text-decoration: none;
-	color: royalblue;
+	color: dodgerblue;
 }
 
 a:hover {
@@ -53,7 +53,7 @@ a:hover {
 }
 
 .navbar button:hover {
-	color: blue;
+	color: dodgerblue;
 	text-decoration: underline;
 }
 
