@@ -93,6 +93,16 @@ a:hover {
 	padding-bottom: 10px;
 	border-radius: 25px;
 	border: solid;
+
+	/*
+	 * Skip rendering (and animating) cards that are scrolled off-screen.
+	 * Animated WebP/GIF decode on the main thread, so pausing the ones the
+	 * user can't see keeps the visible animations running at full frame-rate.
+	 * contain-intrinsic-size reserves a placeholder height so the scrollbar
+	 * doesn't jump; "auto" remembers each card's real size once measured.
+	 */
+	content-visibility: auto;
+	contain-intrinsic-size: auto 600px;
 }
 
 .footer {
